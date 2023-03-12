@@ -1,21 +1,24 @@
 <p>Este es el ID de esta factura: {{ id }}</p>
-<a class="btn btn-danger" routerLink="/movimientos">Atras</a>
-<div class="container">
-  <div class="col-lg-12" style="text-align: center">
-    <h6>Nombre completo del Cliente</h6>
-    Luis Eduardo Leal Diaz
-  </div>
-  <div class="row" style="text-align: center">
-    <div class="col-lg-6">
-      <h6>Cedula</h6>
-      275083872
+<div style="text-align: right">
+  <a class="btn btn-danger" routerLink="/movimientos">Atras</a>
+</div>
+<div class="card text-center">
+  <div class="card-header">Cliente</div>
+  <div class="card-body">
+    <h5 class="card-title">Luis Eduardo Leal Diaz</h5>
+    <div class="row" style="text-align: center">
+      <div class="col-lg-6">
+        <h6>Cedula</h6>
+        275083872
+      </div>
+      <div class="col-lg-6">
+        <h6>@Correo</h6>
+        luisleal98e@gmail.com
+      </div>
     </div>
-    <div class="col-lg-6">
-      <h6>@Correo</h6>
-      luisleal98e@gmail.com
-    </div>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
-  <hr />
+  <div class="card-footer text-muted">Servicio</div>
   <div class="row" style="text-align: center">
     <div class="col-lg-6">
       <h6>Servicio</h6>
@@ -27,3 +30,4 @@
     </div>
   </div>
 </div>
+
