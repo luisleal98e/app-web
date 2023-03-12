@@ -1,0 +1,35 @@
+<a class="btn btn-danger" routerLink="/clientes">Atras</a>
+<a class="btn btn-primary" routerLink="/servicios">Ir a servicios</a>
+<div class="container">
+  <div class="col-lg-12" style="text-align: center">
+    <h6>Nombre completo del Cliente</h6>
+    Luis Eduardo Leal Diaz
+  </div>
+  <div class="row" style="text-align: center">
+    <div class="col-lg-6">
+      <h6>Cedula</h6>
+      275083872
+    </div>
+    <div class="col-lg-6">
+      <h6>@Correo</h6>
+      luisleal98e@gmail.com
+    </div>
+  </div>
+  <hr /> 
+   <div class="row" style="text-align: center">
+    <div class="col-lg-6">
+      <h6>Servicio</h6>
+    </div>
+    <div class="col-lg-6">
+      <h6>Precio</h6>
+    </div>
+  </div>
+  <div class="row" style="text-align: center" *ngFor="let servicio of datosServicios">
+    <div class="col-lg-6">
+      {{servicio.denominacion}}
+    </div>
+    <div class="col-lg-6">
+      {{servicio.precio}}
+    </div>
+  </div>
+</div>

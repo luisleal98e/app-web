@@ -1,0 +1,81 @@
+<nav class="navbar navbar-info bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand">Facturas</a>
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#agregar"
+      >
+        Agregar
+      </button>
+    </div>
+  </nav> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <!-- <th scope="col">Apellido</th> -->
+        <th scope="col">Servicio</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movimiento of datosMovimientos">
+        <td>{{movimiento.id}}</td>
+        <td>{{movimiento.id_cliente}}</td>
+        <td>{{movimiento.id_servicio}}</td> 
+        <td>
+          <a class="btn btn-dark" routerLink="/movimientos/{{movimiento.id}}">Ver factura</a>
+          <button class="btn btn-danger" (click)="borrarRegistro(movimiento.id)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div
+    class="modal fade"
+    id="agregar"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registrar Movimiento</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <label>Clientes</label>
+              <select class="form-select">
+                <option selected disabled>..::Seleccionar::..</option>
+                <option *ngFor="let cliente of datosClientes" value="{{cliente.id}}">{{cliente.cedula +' - '+ cliente.nombre}}</option>
+              </select>
+            </div>
+            <div class="col-lg-6">
+              <label>Servicios</label>
+              <select class="form-select">
+                <option selected disabled>..::Seleccionar::..</option>
+                <option *ngFor="let servicio of datosServicios" value="{{servicio.id}}">{{servicio.denominacion}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

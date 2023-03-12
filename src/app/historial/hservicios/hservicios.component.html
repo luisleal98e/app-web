@@ -1,0 +1,41 @@
+<a class="btn btn-danger" routerLink="/servicios">Atras</a>
+<a class="btn btn-primary" routerLink="/clientes">Ir a clientes</a>
+<div class="container">
+  <div class="col-lg-12" style="text-align: center">
+    <h6>Servicio</h6>
+    Fibra obtica (25.84)
+  </div>
+  <hr />
+  <div class="row" style="text-align: center">
+    <div class="col-lg-3">
+      <h6>Nombre</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>Apellido</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>Cedula</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>@Correo</h6>
+    </div>
+  </div>
+  <div
+    class="row"
+    style="text-align: center"
+    *ngFor="let cliente of datosClientes"
+  >
+    <div class="col-lg-3">
+      <h6>{{ cliente.nombre }}</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>{{ cliente.apellido }}</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>{{ cliente.cedula }}</h6>
+    </div>
+    <div class="col-lg-3">
+      <h6>{{ cliente.correo }}</h6>
+    </div>
+  </div>
+</div>
