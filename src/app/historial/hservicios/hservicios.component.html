@@ -1,11 +1,14 @@
-<a class="btn btn-danger" routerLink="/servicios">Atras</a>
-<a class="btn btn-primary" routerLink="/clientes">Ir a clientes</a>
-<div class="container">
-  <div class="col-lg-12" style="text-align: center">
-    <h6>Servicio</h6>
-    Fibra obtica (25.84)
+<div style="text-align: right">
+  <a class="btn btn-danger" routerLink="/servicios">Atras</a>
+  <a class="btn btn-primary" routerLink="/clientes">Ir a clientes</a>
+</div>
+<div class="card text-center">
+  <div class="card-header">Servicio</div>
+  <div class="card-body">
+    <h5 class="card-title">Fibra obtica (25.84)</h5>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
-  <hr />
+  <div class="card-footer text-muted">Clientes afiliados</div>
   <div class="row" style="text-align: center">
     <div class="col-lg-3">
       <h6>Nombre</h6>
@@ -26,16 +29,16 @@
     *ngFor="let cliente of datosClientes"
   >
     <div class="col-lg-3">
-      <h6>{{ cliente.nombre }}</h6>
+      <label>{{ cliente.nombre }}</label>
     </div>
     <div class="col-lg-3">
-      <h6>{{ cliente.apellido }}</h6>
+      <label>{{ cliente.apellido }}</label>
     </div>
     <div class="col-lg-3">
-      <h6>{{ cliente.cedula }}</h6>
+      <label>{{ cliente.cedula }}</label>
     </div>
     <div class="col-lg-3">
-      <h6>{{ cliente.correo }}</h6>
+      <label>{{ cliente.correo }}</label>
     </div>
   </div>
 </div>
