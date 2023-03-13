@@ -1,5 +1,6 @@
 export class Movimientos{
     id!: number;
-    id_cliente!: number;
-    id_servicio!: number;
+    idClient!: number;
+    idService!: number;
+    date!: Date;
 }

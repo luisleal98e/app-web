@@ -1,6 +1,6 @@
 <nav class="navbar navbar-info bg-info">
     <div class="container-fluid">
-      <a class="navbar-brand">Facturas</a>
+      <a class="navbar-brand text-white">Facturas</a>
       <button
         class="btn btn-primary"
         data-bs-toggle="modal"
@@ -15,19 +15,20 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <!-- <th scope="col">Apellido</th> -->
         <th scope="col">Servicio</th>
+        <th scope="col">Fecha factura</th>
         <th scope="col">Accion</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let movimiento of datosMovimientos">
+      <tr *ngFor="let movimiento of datosFacturas">
         <td>{{movimiento.id}}</td>
-        <td>{{movimiento.id_cliente}}</td>
-        <td>{{movimiento.id_servicio}}</td> 
+        <td>{{movimiento.idClient}}</td>
+        <td>{{movimiento.idService}}</td> 
+        <td>{{movimiento.date}}</td> 
         <td>
           <a class="btn btn-dark" routerLink="/movimientos/{{movimiento.id}}">Ver factura</a>
-          <button class="btn btn-danger" (click)="borrarRegistro(movimiento.id)">Borrar</button>
+          <button class="btn btn-danger" (click)="borrarDatos(movimiento.id)">Borrar</button>
         </td>
       </tr>
     </tbody>
@@ -55,14 +56,14 @@
           <div class="row">
             <div class="col-lg-6">
               <label>Clientes</label>
-              <select class="form-select">
+              <select class="form-select" [(ngModel)]="selectedFacturas.idClient">
                 <option selected disabled>..::Seleccionar::..</option>
                 <option *ngFor="let cliente of datosClientes" value="{{cliente.id}}">{{cliente.cedula +' - '+ cliente.firstName}}</option>
               </select>
             </div>
             <div class="col-lg-6">
               <label>Servicios</label>
-              <select class="form-select">
+              <select class="form-select" [(ngModel)]="selectedFacturas.idService">
                 <option selected disabled>..::Seleccionar::..</option>
                 <option *ngFor="let servicio of datosServicios" value="{{servicio.id}}">{{servicio.name}}</option>
               </select>
@@ -73,7 +74,7 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Cerrar
           </button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Registrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="enviarDatos()">Registrar</button>
         </div>
       </div>
     </div>
