@@ -11,11 +11,7 @@ import { Servicios } from '../modelos/servicios';
 export class MovimientosComponent {
   datosClientes: Clientes[] = [];
   
-  datosServicios: Servicios[] = [
-    {id: 1, denominacion: 'Fibra Obtica', precio: 35.85},
-    {id: 2, denominacion: 'Tecnico', precio: 15.85},
-    {id: 3, denominacion: 'Antenas', precio: 5.85}
-  ]
+  datosServicios: Servicios[] = []
 
   datosMovimientos: Movimientos[] = [
     {id: 1, id_cliente: 1, id_servicio: 1},

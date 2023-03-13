@@ -3,7 +3,7 @@
   <a class="btn btn-primary" routerLink="/servicios">Ir a servicios</a>
 </div>
 <div class="card text-center">
-  <div class="card-header">Cliente</div>
+  <div class="card-header text-white">Cliente</div>
   <div class="card-body">
     <h5 class="card-title">Luis Eduardo Leal Diaz</h5>
     <div class="row" style="text-align: center">
@@ -33,10 +33,10 @@
     *ngFor="let servicio of datosServicios"
   >
     <div class="col-lg-6">
-      <label>{{ servicio.denominacion }}</label>
+      <label>{{ servicio.name }}</label>
     </div>
     <div class="col-lg-6">
-      <label>{{ servicio.precio }}</label>
+      <label>{{ servicio.price }}</label>
     </div>
   </div>
 </div>

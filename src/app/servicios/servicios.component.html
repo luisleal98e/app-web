@@ -1,6 +1,6 @@
 <nav class="navbar navbar-info bg-info">
     <div class="container-fluid">
-      <a class="navbar-brand">Servicios</a>
+      <a class="navbar-brand text-white">Servicios</a>
       <button
         class="btn btn-primary"
         data-bs-toggle="modal"
@@ -22,12 +22,12 @@
     <tbody>
       <tr *ngFor="let servicio of datosServicios">
         <td>{{servicio.id}}</td>
-        <td>{{servicio.denominacion}}</td>
-        <td>{{servicio.precio}}</td>
+        <td>{{servicio.name}}</td>
+        <td>{{servicio.price}}</td>
         <td>
           <a routerLink="/servicios/{{servicio.id}}" class="btn btn-dark">Ver clientes afiliados</a>
           <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#agregar" (click)="obtenerDatos(servicio)">Editar</button>
-          <button class="btn btn-danger" (click)="borrarServivio(servicio.id)">Borrar</button>
+          <button class="btn btn-danger" (click)="borrarDatos(servicio.id)">Borrar</button>
         </td>
       </tr>
     </tbody>
@@ -55,11 +55,11 @@
           <div class="row">
             <div class="col-lg-8">
               <label>Denominacion</label>
-              <input type="text" [(ngModel)]="selectedServicio.denominacion" class="form-control" placeholder="Escribir..." />
+              <input type="text" [(ngModel)]="selectedServicio.name" class="form-control" placeholder="Escribir..." />
             </div>
             <div class="col-lg-4">
               <label>Precio</label>
-              <input type="number" [(ngModel)]="selectedServicio.precio" class="form-control" placeholder="Escribir..." />
+              <input type="number" [(ngModel)]="selectedServicio.price" class="form-control" placeholder="Escribir..." />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Cerrar
           </button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregar()">Guardar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="enviarDatos()">Guardar</button>
         </div>
       </div>
     </div>
