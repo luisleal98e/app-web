@@ -45,15 +45,7 @@ export class ServiciosComponent implements OnInit {
       this.datosServicios = this.datosServicios.filter((item: { id: number; }) => item.id != id);
     }
   }
-
-  agregar(){
-    if(!this.selectedServicio.id){
-      this.selectedServicio.id = this.datosServicios.length + 1;
-      this.datosServicios.push(this.selectedServicio); 
-    } 
-   this.selectedServicio = new Servicios();
-  }
-
+  
   obtenerDatos(servicio: Servicios){
     this.selectedServicio = servicio;
   }
