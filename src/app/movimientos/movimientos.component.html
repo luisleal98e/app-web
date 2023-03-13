@@ -57,7 +57,7 @@
               <label>Clientes</label>
               <select class="form-select">
                 <option selected disabled>..::Seleccionar::..</option>
-                <option *ngFor="let cliente of datosClientes" value="{{cliente.id}}">{{cliente.cedula +' - '+ cliente.nombre}}</option>
+                <option *ngFor="let cliente of datosClientes" value="{{cliente.id}}">{{cliente.cedula +' - '+ cliente.firstName}}</option>
               </select>
             </div>
             <div class="col-lg-6">

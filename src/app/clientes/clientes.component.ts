@@ -1,36 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Clientes } from '../modelos/clientes';
+import { RestService } from '../service/rest.service';
 
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.css']
 })
-export class ClientesComponent {
-  datosClientes: Clientes[] = [
-    {id: 1, nombre: 'Luis', apellido: 'Leal', cedula: 27503872, correo: 'luisleal98e@gmail.com'},
-    {id: 2, nombre: 'Juan', apellido: 'Sanchez', cedula: 26487951, correo: 'juan@gmail.com'},
-    {id: 3, nombre: 'Maria', apellido: 'Diaz', cedula: 24852369, correo: 'maria@gmail.com'},
-  ];
-
+export class ClientesComponent implements OnInit {
+  datosClientes:any = [];
   selectedCliente: Clientes = new Clientes();
 
+  constructor(private RestService:RestService){}
 
-  agregar(){
-    if(!this.selectedCliente.id){
-      this.selectedCliente.id = this.datosClientes.length + 1;
-      this.datosClientes.push(this.selectedCliente);
-    }
-    this.selectedCliente = new Clientes();
-  };
-
-  traerDatos(cliente: Clientes){
-    this.selectedCliente = cliente;
+  ngOnInit(): void {
+    this.cargarDatos();
+  }
+  public cargarDatos(){
+    this.RestService.get('http://localhost:5001/api/clients').subscribe(res => {
+      this.datosClientes = res;
+    })
   }
 
-  borrarCliente(id: number){
-    if(confirm('desea borrar este Cliente?')){
-      this.datosClientes = this.datosClientes.filter((item) => item.id != id)
+  public enviarDatos(){
+    if(!this.selectedCliente.id){
+      this.RestService.post('http://localhost:5001/api/clients/create', this.selectedCliente).subscribe( res => {
+        this.cargarDatos();
+        this.selectedCliente = new Clientes();
+      }) 
+    }else{
+      this.RestService.put('http://localhost:5001/api/clients/update', this.selectedCliente.id, this.selectedCliente).subscribe( res => {
+        this.cargarDatos();
+        this.selectedCliente = new Clientes();
+      }) 
     }
+  }
+
+  public eliminarCliente(id: number){
+    if(confirm('desea borrar este Cliente?')){
+      this.RestService.delete('http://localhost:5001/api/clients/delete', id).subscribe(res => {
+        this.cargarDatos();
+      })
+    }
+  }
+  traerDatos(cliente: Clientes){
+    this.selectedCliente = cliente;
   }
 }

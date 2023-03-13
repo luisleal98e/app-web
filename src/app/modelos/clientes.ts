@@ -1,7 +1,9 @@
 export class Clientes {
     id!: number;
-    nombre!: string;
-    apellido!: string;
+    firstName!: string;
+    lastName!: string;
     cedula!: number;
-    correo!: string;
+    email!: string;
+    createdAt!: Date;
+    updatedAt!: Date;
 }

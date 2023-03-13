@@ -24,14 +24,14 @@
   <tbody>
     <tr *ngFor="let cliente of datosClientes">
       <td>{{cliente.id}}</td>
-      <td>{{cliente.nombre}}</td>
-      <td>{{cliente.apellido}}</td>
+      <td>{{cliente.firstName}}</td>
+      <td>{{cliente.lastName}}</td>
       <td>{{cliente.cedula}}</td>
-      <td>{{cliente.correo}}</td>
+      <td>{{cliente.email}}</td>
       <td>
         <a routerLink="/clientes/{{cliente.id}}" class="btn btn-dark">Ver sus Servicios</a>
         <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#agregar" (click)="traerDatos(cliente)">Editar</button>
-        <button class="btn btn-danger" (click)="borrarCliente(cliente.id)">Borrar</button>
+        <button class="btn btn-danger" (click)="eliminarCliente(cliente.id)">Borrar</button>
       </td>
     </tr>
   </tbody>
@@ -59,11 +59,11 @@
         <div class="row">
           <div class="col-lg-6">
             <label>Nombre</label>
-            <input type="text" [(ngModel)]="selectedCliente.nombre" class="form-control" placeholder="Escribir..." />
+            <input type="text" [(ngModel)]="selectedCliente.firstName" class="form-control" placeholder="Escribir..." />
           </div>
           <div class="col-lg-6">
             <label>Apellido</label>
-            <input type="text" [(ngModel)]="selectedCliente.apellido" class="form-control" placeholder="Escribir..." />
+            <input type="text" [(ngModel)]="selectedCliente.lastName" class="form-control" placeholder="Escribir..." />
           </div>
           <div class="col-lg-6">
             <label>Cedula</label>
@@ -71,7 +71,7 @@
           </div>
           <div class="col-lg-6">
             <label>@Correo</label>
-            <input type="text" [(ngModel)]="selectedCliente.correo" class="form-control" placeholder="Escribir..." />
+            <input type="text" [(ngModel)]="selectedCliente.email" class="form-control" placeholder="Escribir..." />
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cerrar
         </button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregar()">Guardar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="enviarDatos()">Guardar</button>
       </div>
     </div>
   </div>
