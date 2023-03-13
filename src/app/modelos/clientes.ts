@@ -4,6 +4,4 @@ export class Clientes {
     lastName!: string;
     cedula!: number;
     email!: string;
-    createdAt!: Date;
-    updatedAt!: Date;
 }

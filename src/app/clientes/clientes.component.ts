@@ -41,6 +41,7 @@ export class ClientesComponent implements OnInit {
       this.RestService.delete('http://localhost:5001/api/clients/delete', id).subscribe(res => {
         this.cargarDatos();
       })
+      this.datosClientes = this.datosClientes.filter((item: { id: number; }) => item.id != id)
     }
   }
   traerDatos(cliente: Clientes){

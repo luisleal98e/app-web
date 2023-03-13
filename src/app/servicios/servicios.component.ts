@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Servicios } from '../modelos/servicios';
+import { RestService } from '../service/rest.service';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.component.html',
   styleUrls: ['./servicios.component.css']
 })
-export class ServiciosComponent {
+export class ServiciosComponent implements OnInit {
   
-  datosServicios: Servicios[] = [
-    {id: 1, denominacion: 'Fibra Obtica', precio: 35.85},
-    {id: 2, denominacion: 'Tecnico', precio: 15.85},
-    {id: 3, denominacion: 'Antenas', precio: 5.85}
-  ]
-
+  datosServicios: Servicios[] = [];
   selectedServicio: Servicios = new Servicios();
+
+  constructor(private RestService:RestService){}
+
+  ngOnInit(): void {
+    
+  }
 
   agregar(){
     if(!this.selectedServicio.id){
