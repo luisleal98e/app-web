@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RestService } from 'src/app/service/rest.service';
 
 @Component({
   selector: 'app-factura',
@@ -8,12 +9,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FacturaComponent implements OnInit {
   public id:any;
-  constructor(private route:ActivatedRoute){}
+  factura:any = [];
+  datosCliente:any = [];
+  datosServicio:any = [];
+  constructor(private RestService:RestService,private route:ActivatedRoute){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap:any) => {
       const {params} = paramMap;
       this.id = params.id;
     })
+    this.cargarDatos();
+  }
+
+  public cargarDatos(){
+    this.RestService.getOne('http://localhost:5001/api/invoices/find', this.id).subscribe(res_factura => {
+      console.log(res_factura); 
+      this.factura = res_factura;
+    })
+    // this.RestService.getOne('http://localhost:5001/api/clients/find', this.factura.idClient).subscribe(res_cliente => {
+    //   this.datosCliente = res_cliente; 
+    //   console.log(res_cliente); 
+    // })
   }
 }
