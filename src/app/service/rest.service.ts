@@ -12,6 +12,10 @@ export class RestService {
     return this.http.get(url);
   }
 
+  public getOne(url: string, id: number){
+    return this.http.get(url+'/'+id);
+  }
+
   public post(url: string, body:any){
     return this.http.post(url, body);
   }

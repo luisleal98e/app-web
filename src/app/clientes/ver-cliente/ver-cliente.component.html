@@ -1,0 +1,26 @@
+<div class="card-group col-lg-5">
+  <div class="card">
+    <img
+      src="/assets/logo.png"
+      width="100px"
+      height="250px"
+      class="card-img-top"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Datos del cliente</h5>
+      <p class="card-text">
+        <b>Nombre: </b>{{ datos.firstName + " " + datos.lastName }}
+      </p>
+      <p class="card-text"><b>Cedula: </b>{{ datos.cedula }}</p>
+      <p class="card-text"><b>@Correo: </b>{{ datos.email }}</p>
+      <div class="card-footer">
+        <p class="class-text" style="text-align: right;">
+          <small class="text-muted">
+            <a routerLink="/clientes" class="btn btn-primary">Atras</a>
+            <button class="btn btn-danger" (click)="eliminarCliente(datos.id)">Eliminar</button>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

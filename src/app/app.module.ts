@@ -13,6 +13,8 @@ import { FacturaComponent } from './movimientos/factura/factura.component';
 import { HclientesComponent } from './historial/hclientes/hclientes.component';
 import { HserviciosComponent } from './historial/hservicios/hservicios.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { VerClienteComponent } from './clientes/ver-cliente/ver-cliente.component';
+import { VerServicioComponent } from './servicios/ver-servicio/ver-servicio.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FacturaComponent,
     HclientesComponent,
     HserviciosComponent,
-    NavbarComponent
+    NavbarComponent,
+    VerClienteComponent,
+    VerServicioComponent
   ],
   imports: [
     BrowserModule,
