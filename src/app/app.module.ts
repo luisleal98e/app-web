@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { FacturaComponent } from './movimientos/factura/factura.component';
 import { HclientesComponent } from './historial/hclientes/hclientes.component';
 import { HserviciosComponent } from './historial/hservicios/hservicios.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HserviciosComponent } from './historial/hservicios/hservicios.component
     HomeComponent,
     FacturaComponent,
     HclientesComponent,
-    HserviciosComponent
+    HserviciosComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
