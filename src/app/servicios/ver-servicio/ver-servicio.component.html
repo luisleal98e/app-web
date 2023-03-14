@@ -1,1 +1,26 @@
-<p>ver-servicio works!</p>
+<div class="card-group col-lg-5">
+    <div class="card">
+      <img
+        src="/assets/logo.png"
+        width="100px"
+        height="250px"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Datos del servicio</h5>
+        <p class="card-text">
+          <b>Denominacion: </b>{{ datos.name}}
+        </p>
+        <p class="card-text"><b>Precio: </b>{{ datos.price }}</p>
+        <div class="card-footer">
+          <p class="class-text" style="text-align: right;">
+            <small class="text-muted">
+              <a routerLink="/servicios" class="btn btn-primary">Atras</a>
+              <button class="btn btn-danger" (click)="eliminarServicio(datos.id)">Eliminar</button>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

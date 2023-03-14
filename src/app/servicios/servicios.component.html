@@ -28,6 +28,7 @@
           <a routerLink="/servicios/{{servicio.id}}" class="btn btn-dark">Ver clientes afiliados</a>
           <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#agregar" (click)="obtenerDatos(servicio)">Editar</button>
           <button class="btn btn-danger" (click)="borrarDatos(servicio.id)">Borrar</button>
+          <a routerLink="/servicios/verServicio/{{servicio.id}}" class="btn btn-success">Ver</a>
         </td>
       </tr>
     </tbody>
