@@ -9,6 +9,7 @@ import { RestService } from '../service/rest.service';
 })
 export class ClientesComponent implements OnInit {
   datosClientes:any = [];
+  modulo:string = 'Clientes'; 
   selectedCliente: Clientes = new Clientes();
 
   constructor(private RestService:RestService){}

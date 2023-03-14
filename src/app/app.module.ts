@@ -15,6 +15,7 @@ import { HserviciosComponent } from './historial/hservicios/hservicios.component
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { VerClienteComponent } from './clientes/ver-cliente/ver-cliente.component';
 import { VerServicioComponent } from './servicios/ver-servicio/ver-servicio.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { VerServicioComponent } from './servicios/ver-servicio/ver-servicio.comp
     HserviciosComponent,
     NavbarComponent,
     VerClienteComponent,
-    VerServicioComponent
+    VerServicioComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

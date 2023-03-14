@@ -8,7 +8,7 @@ import { RestService } from '../service/rest.service';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
-  
+  modulo:string = 'Servicios';
   datosServicios:any = [];
   selectedServicio: Servicios = new Servicios();
 

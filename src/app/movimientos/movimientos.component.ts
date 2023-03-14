@@ -8,6 +8,7 @@ import { RestService } from '../service/rest.service';
   styleUrls: ['./movimientos.component.css']
 })
 export class MovimientosComponent implements OnInit {
+  modulo:string = 'Facturas';
   datosClientes: any = [];
   datosServicios: any = [];
   datosFacturas: any = [];

@@ -8,28 +8,22 @@ import { RestService } from 'src/app/service/rest.service';
   styleUrls: ['./factura.component.css']
 })
 export class FacturaComponent implements OnInit {
-  public id:any;
-  factura:any = [];
-  datosCliente:any = [];
-  datosServicio:any = [];
+  public id:any; 
+  factura:any = []; 
   constructor(private RestService:RestService,private route:ActivatedRoute){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap:any) => {
       const {params} = paramMap;
-      this.id = params.id;
+      this.id = params.id; 
+      console.log(paramMap)
     })
     this.cargarDatos();
   }
 
   public cargarDatos(){
-    this.RestService.getOne('http://localhost:5001/api/invoices/find', this.id).subscribe(res_factura => {
-      console.log(res_factura); 
+    this.RestService.getOne('http://localhost:5001/api/invoices/find', this.id).subscribe(res_factura => { 
       this.factura = res_factura;
-    })
-    // this.RestService.getOne('http://localhost:5001/api/clients/find', this.factura.idClient).subscribe(res_cliente => {
-    //   this.datosCliente = res_cliente; 
-    //   console.log(res_cliente); 
-    // })
+    }) 
   }
 }
